@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PlantRecognize</string>
+    <string name="upload_button">Upload</string>
+    <string name="camera_button">Take Photo</string>
+    <string name="album_button">Open Album</string>
+    <string name="app_description">Welcome to Plant Recognition! Please select your picture than upload.</string>
+    <string name="angleTitle">Angle</string>
+    <string name="predictTitle">Prediction</string>
+    <string name="angleContent">0</string>
+    <string name="predictContent">no predict</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+</resources>

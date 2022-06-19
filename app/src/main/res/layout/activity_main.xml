@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/app_description"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:text="@string/app_description"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/take_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_click"
+        android:text="@string/camera_button"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.827" />
+
+    <Button
+        android:id="@+id/upload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/button_click"
+        android:onClick="uploadClick"
+        android:text="@string/upload_button"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <Button
+        android:id="@+id/choose_from_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_click"
+        android:text="@string/album_button"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/upload_button"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <ImageView
+        android:id="@+id/image_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="224dp"
+        android:maxHeight="224dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/image1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <ProgressBar
+        android:id="@+id/upload_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_box"
+        app:layout_constraintEnd_toEndOf="@+id/image_box"
+        app:layout_constraintStart_toStartOf="@+id/image_box"
+        app:layout_constraintTop_toTopOf="@+id/image_box" />
+
+    <TextView
+        android:id="@+id/none"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:background="@drawable/greyshape"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:background="@drawable/greyshape"
+        android:text="@string/left"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/none"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/none"
+        app:layout_constraintTop_toBottomOf="@+id/none"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:background="@drawable/greyshape"
+        android:text="@string/right"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/left"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/left"
+        app:layout_constraintTop_toBottomOf="@+id/left"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/angleTitle"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:background="@drawable/greyshape"
+        android:text="@string/angleTitle"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/none"
+        app:layout_constraintTop_toTopOf="@+id/none"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/predictTitle"
+        android:layout_width="98dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:background="@drawable/greyshape"
+        android:text="@string/predictTitle"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/angleTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/angleTitle"
+        app:layout_constraintTop_toTopOf="@+id/angleTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/langleContent"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="260dp"
+        android:background="@color/snow"
+        android:text="@string/angleContent"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintTop_toBottomOf="@+id/angleTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/lpredictContent"
+        android:layout_width="98dp"
+        android:layout_height="25dp"
+        android:background="@color/snow"
+        android:text="@string/predictContent"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/langleContent"
+        app:layout_constraintEnd_toEndOf="@+id/predictTitle"
+        app:layout_constraintStart_toEndOf="@+id/langleContent"
+        app:layout_constraintTop_toBottomOf="@+id/predictTitle" />
+
+    <TextView
+        android:id="@+id/rangleContent"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:background="@color/snow"
+        android:text="@string/angleContent"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/right"
+        app:layout_constraintEnd_toEndOf="@+id/langleContent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/right"
+        app:layout_constraintTop_toBottomOf="@+id/langleContent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/rpredictContent"
+        android:layout_width="98dp"
+        android:layout_height="25dp"
+        android:background="@color/snow"
+        android:text="@string/predictContent"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rangleContent"
+        app:layout_constraintEnd_toEndOf="@+id/lpredictContent"
+        app:layout_constraintStart_toEndOf="@+id/rangleContent"
+        app:layout_constraintTop_toBottomOf="@+id/lpredictContent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
