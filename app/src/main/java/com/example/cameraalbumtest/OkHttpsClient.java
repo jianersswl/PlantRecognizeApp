@@ -19,7 +19,7 @@ public class OkHttpsClient {
     private OkHttpClient okHttpClient;
 
     public OkHttpsClient(){
-        okHttpClient = createTrushAllClient();
+        okHttpClient = new OkHttpClient();
     }
 
     public OkHttpClient getOkHttpClient() {
