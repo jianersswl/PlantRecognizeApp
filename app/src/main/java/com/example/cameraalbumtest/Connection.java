@@ -27,7 +27,7 @@ public class Connection {
     private OkHttpClient okHttpClient = new OkHttpsClient().getOkHttpClient();
 
     private String root = "https://www.jianersswlq.top/";
-    private String resultUrl = "static/recognize/flower/yueji.jpg";
+    private String resultUrl = "static/recognize/detect/yueji/yueji.jpeg";
     private String csrfUrl = "recognize/get_csrf";
     private String CSRF;
     private String response;
@@ -125,12 +125,16 @@ public class Connection {
     }
 
     // 向服务器发送图片并获得prediciton
-    public void postRecognizeImageSync(String filePath,final Handler imageBoxHandler, final Handler textViewHandler) {
+    public void postRecognizeImageSync(final String filePath, final Handler imageBoxHandler, final Handler textViewHandler) {
         final String filePathf = filePath;
         new Thread() {
             @Override
             public void run() {
-                File image = new File("" + filePathf);
+                String temp[] = filePathf.split("\\.");
+                String tempPath = temp[0] + "dup.jpg";
+                System.out.println("File path: " + tempPath);
+                File image = ImageProcessing.imageFileCompress(filePathf, tempPath);
+//                File image = new File("" + filePathf);
                 System.out.println("File size: " + image.length());
 
                 MultipartBody.Builder requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM);
